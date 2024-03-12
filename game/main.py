@@ -20,32 +20,32 @@ class city():
             print(self)
             # print("success")
             # print(self.pop, self.police, self.entropy)
-            ## the former 2 lines are for testing
+            ## the 2 preceding lines are for testing for each city
             iter = self.pop
-            self.inventory = (0,0,0,0,0)
             while iter > 0:
               for object in self.inventory:
                 object = random.randbytes(1)
-                iter -= 1
+                if object == 1:
+                    iter -= 1
                 #append inventory with 1 or 0 for inventory. 101 equals true false true
             
         else:
             print(self)
             print("failure")
 
-bug = city(pop=3,police=0, entropy=1, inventory="")
-bug2 = city(pop=5,police=.3, entropy=.6, inventory="")
+bug = city(pop=3,police=0, entropy=1, inventory=(0,0,0))
+bug2 = city(pop=5,police=.3, entropy=.6, inventory=(0,0,0))
 citylist = [bug, bug2]
-print(bug, "print bug")
-prompt = input("city name\n")
+prompt = input("city name:\n")
 if prompt == "bug":
     storegen = bug
 elif prompt ==  "bug2":
     storegen = bug2
 else:
     storegen = f'invalid city name "{prompt}"'
-print(bug.inventory)
-city.storegenerate(storegen)
+bug2.storegenerate()
+print(bug2.inventory)
+#fix to return actual data instead of memory address. Issue with my 
 
 class stuff():
     def __init__(self, id, name, price, rarity, variance):
