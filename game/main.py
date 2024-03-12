@@ -22,11 +22,13 @@ class city():
             # print(self.pop, self.police, self.entropy)
             ## the former 2 lines are for testing
             iter = self.pop
-            self.inventory = ""
+            self.inventory = (0,0,0,0,0)
             while iter > 0:
-                self.inventory += str(random.getrandbits(1))
+              for object in self.inventory:
+                object = random.randbytes(1)
                 iter -= 1
                 #append inventory with 1 or 0 for inventory. 101 equals true false true
+            
         else:
             print(self)
             print("failure")
